@@ -10,15 +10,17 @@ class ApiController
         sendResponse(responseCode("OK"), 0, "Success", $return);
     }
 
-    public function showUser($userId)
+    public function showUser($id)
     {
         // Retrieve and respond with user data based on $userId
-        echo json_encode(['user' => ['id' => $userId, 'name' => 'John']]);
+        // echo json_encode(['user' => ['id' => $userId, 'name' => 'John']]);
+        sendResponse(responseCode("OK"), 0, "Success", $id);
     }
 
     public function createUser($data)
     {
         // Process the $data JSON and create a new user
         // ...
+        sendResponse(responseCode("OK"), 0, "Success", $data);
     }
 }

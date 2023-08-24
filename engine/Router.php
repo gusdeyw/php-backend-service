@@ -31,6 +31,9 @@ class Router
                         $params['data'] = $data;
                     }
                 }
+                if($requestMethod === 'GET' && count($matches) > 1){
+                    $params['id'] = $matches["id"];
+                }
 
                 require_once 'controllers/' . $controllerName . '.php';
                 $controller = new $controllerName();
