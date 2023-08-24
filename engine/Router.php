@@ -34,6 +34,9 @@ class Router
                 if($requestMethod === 'GET' && count($matches) > 1){
                     $params['id'] = $matches["id"];
                 }
+                if($requestMethod === 'DELETE' && count($matches) > 1){
+                    $params['code'] = $matches["code"];
+                }
 
                 require_once 'controllers/' . $controllerName . '.php';
                 $controller = new $controllerName();

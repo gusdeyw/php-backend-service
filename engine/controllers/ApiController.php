@@ -23,4 +23,16 @@ class ApiController
         // ...
         sendResponse(responseCode("OK"), 0, "Success", $data);
     }
+    public function putUser($data)
+    {
+        // Process the $data JSON and create a new user
+        // ...
+        sendResponse(responseCode("OK"), 0, "Data yang ter PUT", $data);
+    }
+    public function deleteUser($code)
+    {
+        // Process the $data JSON and create a new user
+        // ...
+        sendResponse(responseCode("OK"), 0, "Success", "Code yang ter delete: ".$code);
+    }
 }
