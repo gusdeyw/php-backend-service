@@ -1,12 +1,14 @@
 <?php
-require_once "./engine/global_var.php";
+require_once "./engine/Controllers.php";
 class ApiController
 {
     public function showUsers()
     {
         // Retrieve and respond with user data
         // echo json_encode(['users' => ['user1', 'user2']]);
-        $return = ['users' => ['user1', 'user2']];
+        $db = query_builder();
+        // $return = ['users' => ['user1', 'user2']];
+        $return = $db->all("user");
         sendResponse(responseCode("OK"), 0, "Success", $return);
     }
 
